@@ -88,6 +88,7 @@
     <hr>
 
     <h1>Ejercicio 5: </h1>
+    <h3>A- </h3>
     <h3>Perimetro Rectangulo</h3>
 
     <?php
@@ -107,9 +108,8 @@
     ?>
 
     <br>
-    <hr>
-
-    <h1>Ejercicio 6: </h1>
+    
+    <h3>B- </h3>
     <h3>Perimetro Circulo</h3>
 
     <?php

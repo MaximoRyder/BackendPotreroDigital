@@ -10,8 +10,11 @@
 
 <body>
     <h1>Ejercicio 1: </h1>
-    <h1>Hola Mundo</h1>
 
+    <?php
+    echo "Hola Mundo";
+    ?>
+    
     <br>
     <hr>
 

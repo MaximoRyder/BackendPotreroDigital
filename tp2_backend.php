@@ -9,15 +9,16 @@
 </head>
 
 <body>
+    <!-- Coloque respuestas en los else, para que quedara más prolijo, tambien defini simplemente 1 variable para los primeros 3 ejercicios -->
+
     <h1>Ejercicio 1: </h1>
 
     <?php
-    $numero = 13;
+    $numero = 8;
 
     if ($numero > 0) {
         echo "El numero $numero es un n° positivo";
-    }
-    else {
+    } else {
         echo "El numero $numero NO es un n° positivo";
     }
     ?>
@@ -30,8 +31,7 @@
     <?php
     if ($numero > 1 && $numero < 10) {
         echo "El numero $numero es mayor a 1 y menor a 10";
-    }
-    else {
+    } else {
         echo "El numero $numero no cumple las condiciones";
     }
     ?>
@@ -42,15 +42,13 @@
     <h1>Ejercicio 3: </h1>
 
     <?php
- if ($numero > 10 ) {
-    echo "El numero $numero es mayor a 10";
-}
-elseif ($numero < 2 ) {
-    echo "El numero $numero es menor a 2";
-}
-else {
-    echo "El numero $numero no cumple ninguna de las condiciones";
-}
+    if ($numero > 10) {
+        echo "El numero $numero es mayor a 10";
+    } elseif ($numero < 2) {
+        echo "El numero $numero es menor a 2";
+    } else {
+        echo "El numero $numero no cumple ninguna de las condiciones";
+    }
     ?>
 
     <br>
@@ -59,8 +57,21 @@ else {
     <h1>Ejercicio 4: </h1>
 
     <?php
+    $numero1 = 15;
+    $numero2 = 20;
 
+    if ($numero1 > $numero2) {
+        echo "Numero1 ($numero1) es mayor a Numero2 ($numero2), entonces: <br>";
+        echo "Suma: ", $numero1 + $numero2, "<br>";
+        echo "Resta: ", $numero1 - $numero2, "<br>";
+    } elseif ($numero2 > $numero1) {
+        echo "Numero2 ($numero2) es mayor a Numero1 ($numero1), entonces: <br>";
+        echo "Multiplicacion: ", $numero2 * $numero1, "<br>";
+        echo "Division Entera: ", intdiv($numero2, $numero1), "<br>";
+        echo "Resto division: ", $numero2 % $numero1, "<br>";
+    } else {
+        echo "Los numeros ingresados son iguales";
+    }
     ?>
 
     <br>
-    <hr>

@@ -42,10 +42,8 @@
     <h1>Ejercicio 3: </h1>
 
     <?php
-    if ($numero > 10) {
-        echo "El numero $numero es mayor a 10";
-    } elseif ($numero < 2) {
-        echo "El numero $numero es menor a 2";
+    if ($numero > 10 || $numero < 2) {
+        echo "El numero $numero es mayor a 10 o menor a 2";
     } else {
         echo "El numero $numero no cumple ninguna de las condiciones";
     }

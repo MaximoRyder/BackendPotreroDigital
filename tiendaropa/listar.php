@@ -26,6 +26,7 @@
             <th>MARCA</th>
             <th>TALLE</th>
             <th>PRECIO</th>
+            <th>IMAGEN</th>
         </tr>
         <?php
         // 1) Conexion
@@ -52,6 +53,7 @@
                 <td><?php echo $reg['marca']; ?></td>
                 <td><?php echo $reg['talle']; ?></td>
                 <td><?php echo $reg['precio']; ?></td>
+                <td><img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($reg['imagen']) ?>" alt="" width="100px" height="100px" )></td>
             </tr>
         <?php } ?>
     </table>

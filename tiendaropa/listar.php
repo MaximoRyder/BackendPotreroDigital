@@ -16,6 +16,7 @@
     <button type="submit"><a href="nike.php">Ropa Nike</a></button>
     <button type="submit"><a href="buzos.php">Buzos</a></button>
     <button type="submit"><a href="precio.php">Precios mayores a 500</a></button>
+    <button type="submit"><a href="listarencards.php">Listar en Cards</a></button>
 
     <h2>Lista de ropa</h2>
     <p>La siguiente lista muestra los datos de la ropa actualmente en stock.</p>
@@ -27,6 +28,8 @@
             <th>TALLE</th>
             <th>PRECIO</th>
             <th>IMAGEN</th>
+            <th>EDITAR</th>
+            <th>BORRAR</th>
         </tr>
         <?php
         // 1) Conexion
@@ -54,6 +57,8 @@
                 <td><?php echo $reg['talle']; ?></td>
                 <td><?php echo $reg['precio']; ?></td>
                 <td><img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($reg['imagen']) ?>" alt="" width="100px" height="100px" )></td>
+                <td><a href="modificar.php?id=<?php echo $reg['id']; ?>">Editar</a></td>
+                <td><a href="borrar.php?id=<?php echo $reg['id']; ?>">Borrar</a></td>
             </tr>
         <?php } ?>
     </table>

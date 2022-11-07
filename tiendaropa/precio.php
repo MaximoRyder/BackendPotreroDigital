@@ -16,6 +16,8 @@
     <button type="submit"><a href="nike.php">Ropa Nike</a></button>
     <button type="submit"><a href="buzos.php">Buzos</a></button>
     <button type="submit"><a href="precio.php">Precios mayores a 500</a></button>
+    <button type="submit"><a href="listarencards.php">Listar en Cards</a></button>
+    
     <h2>Lista de ropa</h2>
     <p>La siguiente lista muestra los datos de la ropa actualmente en stock.</p>
     <table border="1">

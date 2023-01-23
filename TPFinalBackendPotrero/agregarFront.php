@@ -19,7 +19,6 @@ session_start();
 </head>
 
 <body>
-
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container px-4 px-lg-5">
@@ -97,7 +96,6 @@ session_start();
                 Cancelar
             </button>
             <br><br>
-
         </form>
     </div>
 

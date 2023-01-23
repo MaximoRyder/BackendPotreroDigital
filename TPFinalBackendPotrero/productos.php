@@ -1,20 +1,9 @@
 <?php
-// 1) Conexion
-// a) realizar la conexion con la bbdd
-// b) seleccionar la base de datos a usar
 $conexion = mysqli_connect("127.0.0.1", "root", "");
 mysqli_select_db($conexion, "rydertech");
-// 2) Almacenamos los datos del envío GET
-// a) generar variables para el id a utilizar
 $id = $_GET['id'];
-// 3) Preparar la SQL
-// => Selecciona todos los campos de la tabla alumno donde el campo id  sea igual a $id
-// a) generar la consulta a realizar
 $consulta = "SELECT * FROM productos WHERE id=$id";
-// 4) Ejecutar la orden y almacenamos en una variable el resultado
-// a) ejecutar la consulta
 $repuesta = mysqli_query($conexion, $consulta);
-// 5) Transformamos el registro obtenido a un array
 $datos = mysqli_fetch_array($repuesta);
 ?>
 
@@ -83,7 +72,6 @@ $datos = mysqli_fetch_array($repuesta);
     <button class="btn btn-outline-dark" type="submit">
       <a href="microprocesadores.php">Microprocesadores</a>
     </button>
-
     <button class="btn btn-outline-dark" type="submit">
       <a href="perifericos.php">Periféricos</a>
     </button>
@@ -98,9 +86,6 @@ $datos = mysqli_fetch_array($repuesta);
     </div>
   </header>
   <?php
-  // 6) asignamos a diferentes variables los respectivos valores del array $datos.
-  // este paso no es estrictamente necesario, pero es mas practico
-  //para despues llamarlos solo con el nombre de la variable
   $nombreProducto = $datos["nombreProducto"];
   $precioProducto = $datos["precioProducto"];
   $descripcionProducto = $datos["descripcionProducto"];
@@ -111,16 +96,11 @@ $datos = mysqli_fetch_array($repuesta);
   $masVendido = $datos['masVendido'];
   $nuevoIngreso = $datos['nuevoIngreso'];
   $disponible = $datos['disponible']; ?>
-
-  <!-- mostramos los datos de ese único producto
-  lo meto en una card, pero se puede mostrar como quieran-->
   <div class="container px-4 px-lg-5 my-5"></div>
   <div class="container px-4 px-lg-5 my-5">
     <div class="centerCard">
       <div class="card w-50">
         <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($imagenProducto) ?>" alt="..." />
-        <!-- <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($datos['imagenProductoDos']) ?>" alt="..." />
-           <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($datos['imagenProductoTres']) ?>" alt="..." /> -->
         <div class="card-body">
           <h5 class="card-title"><?php echo $nombreProducto; ?></h5>
           <p class="card-text">$<?php echo $datos["precioProducto"]; ?></p>
@@ -133,15 +113,12 @@ $datos = mysqli_fetch_array($repuesta);
       </div>
     </div>
   </div>
-  <!-- Footer-->
   <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright RyderTech Software &copy; Your Website 2022</p>
     </div>
   </footer>
-  <!-- Bootstrap core JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Core theme JS-->
   <script src="js/scripts.js"></script>
 </body>
 

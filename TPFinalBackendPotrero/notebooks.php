@@ -63,7 +63,6 @@
         <button class="btn btn-outline-dark" type="submit">
             <a href="microprocesadores.php">Microprocesadores</a>
         </button>
-
         <button class="btn btn-outline-dark" type="submit">
             <a href="perifericos.php">Periféricos</a>
         </button>

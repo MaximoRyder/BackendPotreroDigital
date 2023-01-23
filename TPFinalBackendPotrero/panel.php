@@ -59,48 +59,23 @@ session_start();
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
                 <?php
-                // 1) Conexion
                 $conexion = mysqli_connect("127.0.0.1", "root", "");
                 mysqli_select_db($conexion, "rydertech");
-
-                // 2) Preparar la orden SQL
-                // Sintaxis SQL SELECT
-                // SELECT * FROM nombre_tabla
-                // => Selecciona todos los campos de la siguiente tabla
-                // SELECT campos_tabla FROM nombre_tabla
-                // => Selecciona los siguientes campos de la siguiente tabla
                 $consulta = 'SELECT * FROM productos';
-
-                // 3) Ejecutar la orden y obtenemos los registros
                 $datos = mysqli_query($conexion, $consulta);
-
-                //  recorro todos los registros y genero una CARD PARA CADA UNA
                 while ($reg = mysqli_fetch_array($datos)) { ?>
-
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product tipe-->
                             <h6 class="fw-bolder"><?php echo ucwords($reg['tipoProducto']) ?></h6>
-                            <!-- Product image-->
                             <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($reg['imagenProducto']) ?>" alt="..." />
-                            <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <!-- Product name-->
                                     <h5 class="fw-bolder"><?php echo ucwords($reg['nombreProducto']) ?></h5>
-                                    <!-- Product description-->
                                     <h6 class="fw-bolder"><?php echo ucwords($reg['descripcionProducto']) ?></h6>
-                                    <!-- Product price-->
                                     <h2>$<?php echo $reg['precioProducto']; ?></h2>
                                 </div>
                             </div>
-                            <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-
-                                <!-- boton con link de pago que cargué en la base de datos
-                                <div class="text-center"> <?php echo $reg['link']; ?></div>
-                               <br> -->
-                                <!--boton que me lleva a la pagina del producto-->
                                 <div class="text-center text-white">
                                     <a href="productos.php?id=<?php echo $reg['id']; ?>"> <button class="btn btn-outline-dark" type="button" name="button">Ver</button></a>
                                     <a href="modificarFront.php?id=<?php echo $reg['id']; ?>"><button class="btn btn-outline-dark" type="button" name="button">Editar</button></a>
@@ -109,26 +84,18 @@ session_start();
                             </div>
                         </div>
                     </div>
-
                 <?php } ?>
-
             </div>
         </div>
     </section>
-
-
-    <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright RyderTech Software &copy; Your Website 2022</p>
         </div>
     </footer>
-    <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
 </body>
 
 </html>
